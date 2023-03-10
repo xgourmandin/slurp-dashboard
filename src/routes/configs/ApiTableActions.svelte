@@ -7,6 +7,7 @@
 
 
     export let id: string;
+    export let active: boolean;
     let open = false;
 
     function toggle() {
@@ -18,11 +19,25 @@
         });
     }
 
+    async function toggleApiActivation() {
+        await fetch("/configs", {
+            method: "POST",
+            body: JSON.stringify({
+                id: id,
+                activate: !active
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+        active = !active
+    }
+
 </script>
 
 <div class="btn-group">
-    <button class="btn btn-sm">
-        <Icon icon="mdi:pause" />
+    <button class="btn btn-sm" on:click={toggleApiActivation}>
+        <Icon icon="mdi:{active ? 'pause': 'play'}" />
     </button>
     <a href="/configs/{id}/edit" class="btn btn-sm">
         <Icon icon="mdi:edit"/>

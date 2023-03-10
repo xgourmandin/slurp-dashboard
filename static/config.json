@@ -1,0 +1,109 @@
+{
+  "data": {
+    "JSON": {
+      "root": {
+        "label": "Data root path",
+        "helper": "A JSON path pointing to the root of the data to store (can be an array or a single value)",
+        "type": "text"
+      }
+    }
+  },
+  "authentication": {
+    "API_KEY": {
+      "token_param": {
+        "label": "Token parameter name",
+        "type": "text",
+        "helper": "Name of the token parameter in the query"
+      },
+      "token_env": {
+        "label": "Token environment variable",
+        "type": "text",
+        "helper": "Name of the server environment variable that holds the value of the token"
+      },
+      "in_header": {
+        "label": "In header ?",
+        "type": "boolean",
+        "helper": "Put the token in query headers, or in the query parameters if disabled"
+      }
+    }
+  },
+  "pagination": {
+    "PAGE_LIMIT": {
+      "page_param": {
+        "label": "Page parameter",
+        "type": "text",
+        "helper": "The query parameter that controls page value"
+      },
+      "limit_param": {
+        "label": "Limit parameter",
+        "type": "text",
+        "helper": "The query parameter that controls limit value"
+      },
+      "page_size": {
+        "label": "Page size",
+        "type": "number",
+        "helper": "The number of results per page"
+      }
+    },
+    "OFFSET_LIMIT": {
+      "page_param": {
+        "label": "Offset parameter",
+        "type": "text",
+        "helper": "The query parameter that controls offset value"
+      },
+      "limit_param": {
+        "label": "Limit parameter",
+        "type": "text",
+        "helper": "The query parameter that controls limit value"
+      },
+      "page_size": {
+        "label": "Page size",
+        "type": "number",
+        "helper": "The number of results per page"
+      }
+    },
+    "HATEOAS": {
+      "next_link_path": {
+        "label": "Next link path",
+        "type": "text",
+        "helper": "A JSON path pointing to the next page url in the API response"
+      }
+    }
+  },
+  "output": {
+    "BUCKET": {
+      "bucket": {
+        "label": "Bucket name",
+        "type": "text",
+        "helper": "Bucket where API data are stored"
+      },
+      "filename": {
+        "label": "File name",
+        "type": "text",
+        "helper": "A file name under which API data are stored in the bucket"
+      }
+    },
+    "BIGQUERY": {
+      "project":  {
+        "label": "Project ID",
+        "type": "text",
+        "helper": "The GCP project ID where data re stored in BigQuery"
+      },
+      "dataset": {
+        "label": "Dataset name",
+        "type": "text",
+        "helper": "The BigQuery dataset name where data are stored"
+      },
+      "table": {
+        "label": "Table name",
+        "type": "text",
+        "helper": "The BigQuery table where data are stored "
+      },
+      "autodetect": {
+        "label": "Autodetect schema ?",
+        "type": "boolean",
+        "helper": "Whether letting BigQuery detect the data schema automatically or not"
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 <script lang="ts">
     import ApiTableActions from "./ApiTableActions.svelte";
+    import Icon from "@iconify/svelte";
 
     export let data;
 
@@ -9,8 +10,9 @@
 </script>
 
 <div class="w-full">
-    <div class="prose mb-8">
+    <div class="prose min-w-full mb-8 flex justify-between">
         <h1>Apis configurations</h1>
+        <a href="/configs/new" class="btn btn-primary"><Icon icon="mdi:plus"/>Create</a>
     </div>
     <table class="table w-full">
         <thead>
@@ -20,10 +22,11 @@
         <th>Data type</th>
         <th>Configuration</th>
         <th>Output</th>
+        <th>Active</th>
         <th></th>
         </thead>
         <tbody>
-        {#each data.configurations as config, i}
+        {#each data?.configurations as config, i}
         <tr>
             <td>{config.name}</td>
             <td>{config.url}</td>
@@ -37,7 +40,10 @@
                 {config.output_type}
             </td>
             <td>
-                <ApiTableActions id={config.name} on:confirmed={deleteApi} />
+                <div class="badge badge-sm" class:badge-success={config.active} class:badge-error={!config.active}></div>
+            </td>
+            <td>
+                <ApiTableActions id={config.name} on:confirmed={deleteApi} bind:active={config.active} />
             </td>
         </tr>
         {/each}
