@@ -7,24 +7,24 @@
                 <input type="hidden" name="name" value={value.name}/>
             {/if}
             <div class="form-control w-full max-w-xs">
-                <label class="label">
+                <label class="label" for="name">
                     <span class="label-text">Name</span>
                 </label>
-                <input type="text" name="name" placeholder="Api name" class="input input-bordered w-full max-w-xs"
+                <input type="text" id="name" name="name" placeholder="Api name" class="input input-bordered w-full max-w-xs"
                        value={value ? value.name : ""} disabled={value}/>
             </div>
             <div class="form-control w-full max-w-xs">
-                <label class="label">
+                <label class="label" for="url">
                     <span class="label-text">Endpoint</span>
                 </label>
-                <input type="url" name="url" placeholder="Api name" class="input input-bordered w-full max-w-xs"
+                <input type="url" id="url" name="url" placeholder="Api name" class="input input-bordered w-full max-w-xs"
                        value={value ? value.url : ""}/>
             </div>
             <div class="form-control w-full max-w-xs">
-                <label class="label">
+                <label class="label" for="method">
                     <span class="label-text">Method</span>
                 </label>
-                <select bind:value={selectedMethod} name="method" class="select select-bordered w-full max-w-xs">
+                <select bind:value={selectedMethod} id="method" name="method" class="select select-bordered w-full max-w-xs">
                     <option value="GET" selected={selectedMethod === "GET"}>GET</option>
                     <option value="POST">POST</option>
                 </select>

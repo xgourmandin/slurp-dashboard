@@ -14,14 +14,14 @@
         <div class="grid grid-cols-3 gap-8">
             {#each [...new Map(Object.entries(config.get(selectedType)))] as [key, conf]}
                 <div>
-                    <label class="label">
+                    <label class="label" for={category+"."+key}>
                         <span class="label-text">{conf.label}</span>
                     </label>
                     {#if conf.type === 'boolean'}
-                        <input type="checkbox" class="checkbox" name={category+"."+key}
+                        <input type="checkbox" class="checkbox" id={category+"."+key} name={category+"."+key}
                                checked={value ? value[key] : false}/>
                     {:else}
-                        <input type={conf.type} name={category+"."+key} placeholder="Type here"
+                        <input type={conf.type} id={category+"."+key} name={category+"."+key} placeholder="Type here"
                                class="input input-bordered w-full max-w-xs"
                                value={value ? value[key] : ""}/>
                     {/if}
