@@ -38,6 +38,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"google-auth-library": "^8.7.0",
+		"moment": "^2.29.4",
 		"normalize.css": "^8.0.1"
 	}
 }

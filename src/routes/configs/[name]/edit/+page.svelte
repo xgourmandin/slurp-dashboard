@@ -19,5 +19,5 @@
         </ul>
         <div class="divider"></div>
     {/if}
-    <ApiForm value={data.history} formConfig={data.formConfig} />
+    <ApiForm value={data.configuration} formConfig={data.formConfig} />
 </div>

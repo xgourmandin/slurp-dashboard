@@ -12,9 +12,9 @@
 </script>
 
 <div class="prose max-w-full">
-    <h1>Create API history</h1>
+    <h1>Create API configuration</h1>
     {#if form?.has_errors}
-        <h3 class="text-accent">There are errors in the history :</h3>
+        <h3 class="text-accent">There are errors in the configuration :</h3>
         <ul>
         {#each form?.errors as error}
             <li>Field "{error.field}" {translateError(error)}</li>

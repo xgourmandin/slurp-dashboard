@@ -2,9 +2,7 @@
 
     import Icon from "@iconify/svelte";
     import { createEventDispatcher } from 'svelte';
-
-    const dispatch = createEventDispatcher();
-
+    import { invalidateAll } from "$app/navigation";
 
     export let id: string;
     export let active: boolean;
@@ -13,10 +11,17 @@
     function toggle() {
         open = !open
     }
-    function confirm() {
-        dispatch('confirmed', {
-            id: id
+    async function confirm() {
+        await fetch("/configs", {
+            method: "DELETE",
+            body: JSON.stringify({
+                name: id
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
         });
+        await invalidateAll();
     }
 
     async function toggleApiActivation() {
@@ -51,7 +56,7 @@
 <div class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
         <h3 class="font-bold text-lg">WARNING!</h3>
-        <p class="py-4">You are about to delete API {id}. Do you want to proceed ?</p>
+        <p class="py-4">You are about to delete API {id}. <br/>Do you want to proceed ?</p>
         <div class="modal-action">
             <label for="delete-modal-{id}" class="btn" on:click={confirm}>Yes, Delete</label>
             <label for="delete-modal-{id}" class="btn">Nope, my bad</label>

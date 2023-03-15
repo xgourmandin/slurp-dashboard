@@ -50,7 +50,4 @@
     } else {
         selectedType = config.keys().next().value
     }
-
-    console.log(selectedType);
-
 </script>
