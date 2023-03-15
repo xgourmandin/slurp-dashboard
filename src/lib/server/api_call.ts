@@ -4,6 +4,7 @@ import type { GaxiosOptions } from "gaxios/build/src/common";
 const auth = new GoogleAuth();
 
 export async function sendRequest(url: string, method: GaxiosOptions["method"] = "GET", body?: any) {
+  console.log("Process deploy target is : ", process.env.DEPLOY_TARGET);
   if (process.env.DEPLOY_TARGET === "cloudrun") {
     const targetAudience = String(process.env.SLURP_SERVER_URL);
     console.info(`request ${url} with target audience ${targetAudience}`);
