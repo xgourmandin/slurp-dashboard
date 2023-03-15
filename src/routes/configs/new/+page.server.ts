@@ -22,7 +22,7 @@ export const actions = {
             return {
                 has_errors: true,
                 formData: transformed,
-                errors: await result.json
+                errors: result.json
             }
         }
     }

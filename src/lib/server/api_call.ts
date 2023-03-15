@@ -11,9 +11,19 @@ export async function sendRequest(url: string, method: GaxiosOptions["method"] =
     const client = await auth.getIdTokenClient(targetAudience);
     let result;
     if (method === "GET") {
-      result = await client.request({ url: url, method: method });
+      result = await client.request({
+        url: url, method: method, headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        }
+      });
     } else {
-      result = await client.request({ url: url, method: method, body: body });
+      result = await client.request({
+        url: url, method: method, body: body, headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        }
+      });
     }
     return { status: result.status, json: result.data };
   } else {
