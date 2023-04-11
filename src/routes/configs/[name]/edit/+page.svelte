@@ -1,11 +1,10 @@
 <script lang="ts">
     import ApiForm from "../../ApiForm.svelte";
     import {translateError} from "$lib/error_translator";
+    import type { ActionData, PageData } from "./$types";
 
-    /** @type {import('./$types').PageData} */
-    export let data;
-    /** @type {import('./$types').ActionData} */
-    export let form;
+    export let data: PageData;
+    export let form: ActionData;
 </script>
 
 <div class="prose max-w-full">

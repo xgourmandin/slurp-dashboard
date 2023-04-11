@@ -1,8 +1,9 @@
 <script lang="ts">
     import ApiTableActions from "./ApiTableActions.svelte";
     import Icon from "@iconify/svelte";
+    import type { PageData } from "./$types";
 
-    export let data;
+    export let data: PageData;
 
     function deleteApi(evt: CustomEvent) {
         console.log(`Api ${evt.detail.id} deleted`);

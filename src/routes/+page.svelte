@@ -2,8 +2,9 @@
   import Icon from "@iconify/svelte";
   import moment from "moment";
   import { invalidateAll } from "$app/navigation";
+  import type { PageData } from "./$types";
 
-  export let data;
+  export let data: PageData;
 
   function formatDate(date: string): string {
     const parsed = moment(date);

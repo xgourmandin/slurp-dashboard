@@ -1,12 +1,11 @@
 <script lang="ts">
     import ApiForm from "../ApiForm.svelte";
     import {translateError} from "$lib/error_translator";
+    import type { ActionData, PageData } from "./$types";
 
-    /** @type {import('./$types').PageData} */
-    export let data;
+    export let data: PageData;
 
-    /** @type {import('./$types').ActionData} */
-    export let form;
+    export let form: ActionData;
 
 
 </script>
