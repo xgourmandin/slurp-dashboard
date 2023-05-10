@@ -33,23 +33,23 @@
     </section>
     <div class="divider"></div>
     <section>
-        <h3>Data history</h3>
+        <h3>Data configuration</h3>
         <ApiFormGroup config={dataConfig} value={value ? value.data : null} category="data"/>
     </section>
     <div class="divider"></div>
     <section>
-        <h3>Authentication history</h3>
+        <h3>Authentication configuration</h3>
         <ApiFormGroup config={authConfig} value={value ? value.auth : null} category="auth" optional="true"/>
     </section>
     <div class="divider"></div>
     <section>
-        <h3>Pagination history</h3>
+        <h3>Pagination configuration</h3>
         <ApiFormGroup config={paginationConfig} value={value ? value.pagination : null} category="pagination"
                       optional="true"/>
     </section>
     <div class="divider"></div>
     <section>
-        <h3>Output history</h3>
+        <h3>Output configuration</h3>
         <ApiFormGroup config={outputConfig} value={value ? value.output : null} category="output" optional="true"/>
     </section>
     <div class="divider"></div>

@@ -25,6 +25,33 @@
         "type": "boolean",
         "helper": "Put the token in query headers, or in the query parameters if disabled"
       }
+    },
+    "CLIENT_CREDS": {
+      "access_token_url": {
+        "label": "Access token URL",
+        "type": "text",
+        "helper": "URL used to generated your access token"
+      },
+      "payload_template": {
+        "label": "Access token payload template",
+        "type": "text",
+        "helper": "Use ${CLIENT_ID} and ${CLIENT_SECRET} in a string of the form param1=val1&param2=val2&..."
+      },
+      "access_token_path": {
+        "label": "Access Token Path",
+        "type": "text",
+        "helper": "A JSON path pointing to the token in the authentication request response"
+      },
+      "client_id": {
+        "label": "Client ID",
+        "type": "text",
+        "helper": "Client ID value"
+      },
+      "client_secret": {
+        "label": "Client Secret",
+        "type": "text",
+        "helper": "Client Secret value"
+      }
     }
   },
   "pagination": {
