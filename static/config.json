@@ -15,10 +15,10 @@
         "type": "text",
         "helper": "Name of the token parameter in the query"
       },
-      "token_env": {
-        "label": "Token environment variable",
+      "token_secret": {
+        "label": "Token secret",
         "type": "text",
-        "helper": "Name of the server environment variable that holds the value of the token"
+        "helper": "Name of the secret that holds the token's value"
       },
       "in_header": {
         "label": "In header ?",
@@ -43,14 +43,14 @@
         "helper": "A JSON path pointing to the token in the authentication request response"
       },
       "client_id": {
-        "label": "Client ID",
+        "label": "Client ID Secret",
         "type": "text",
-        "helper": "Client ID value"
+        "helper": "Name of the secret that holds the Client ID's value"
       },
       "client_secret": {
-        "label": "Client Secret",
+        "label": "Client Secret Secret",
         "type": "text",
-        "helper": "Client Secret value"
+        "helper": "Name of the secret that holds the Client Secret's value"
       }
     }
   },
