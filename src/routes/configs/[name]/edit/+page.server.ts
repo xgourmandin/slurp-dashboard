@@ -13,11 +13,11 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 };
 
 export const actions: Actions = {
-  default: async ({ request }) => {
+  default: async ({ request, params }) => {
     const formData = Object.fromEntries(await request.formData());
     const transformed = formDataToJson(formData);
     const url: string = process.env.SLURP_SERVER_URL || "http://localhost:3000";
-    const result = await sendRequest(`${url}/api/${transformed.name}`, "PUT", JSON.stringify(transformed));
+    const result = await sendRequest(`${url}/api/${params.name}`, "PUT", JSON.stringify(transformed));
     if (result.status == 200) {
       throw redirect(302, "/configs");
     } else {
